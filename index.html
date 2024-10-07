@@ -13,40 +13,67 @@
 <body>
   <main>
     <section class="form">
-      <div class="header-group">
-        <h1>  Mortgage Calculator
-        </h1>
-        <button type="reset">Clear All</button>
-      </div>
-      <div class="input-group">
-        <label for="Amount">  Mortgage Amount
-        </label>
-        <input type="number" name="Amount" id="Amount">
-      </div>
-      <div class="input-group-2">
-        <label for="Term">  Mortgage Term
-        </label>
-        <input type="number" name="Term" id="Term">
-        <label for="Interest">  Interest Rate
-        </label>
-        <input type="number" name="Interest" id="Interest">
-      </div>
-      <div class="input-group-3">
-        <label for="radio">  Mortgage Type
-        </label>
-        <input type="radio" value="Repayment" name="radio" id="repayment">
-        <input type="radio" value="Interest Only" name="radio" id="interest-only">
-      </div>
-      <button type="submit"><img src="assets/images/icon-calculator.svg" alt="calculator-image" class="calculator">  Calculate Repayments
-      </button>
+      <form action="">
+        <div class="header-group">
+          <h1>  Mortgage Calculator
+          </h1>
+          <button class="clearAll" type="reset">Clear All</button>
+        </div>
+        <div class="input-group">
+          <label for="Amount">  Mortgage Amount
+          </label>
+          <input type="number" placeholder="£" name="Amount" id="Amount">
+        </div>
+        <div class="input-group-2">
+          <label for="Term">  Mortgage Term
+          </label>
+          <input type="number" placeholder="years" name="Term" id="Term">
+          <label for="Interest">  Interest Rate
+          </label>
+          <input type="number" placeholder="%" name="Interest" id="Interest">
+        </div>
+        <div class="input-group-3">
+          <label for="radio">  Mortgage Type
+          </label>
+          <label class="option" for="repayment">
+            <input type="radio" placeholder="Repayment" value="Repayment" name="radio" id="repayment">
+            Repayment
+          </label>
+          <label class="option" for="interest-only">
+            <input type="radio" value="Interest Only" placeholder="interest-only" name="radio" id="interest-only">
+            interest-only
+          </label>
+        </div>
+        <button type="submit"><img src="assets/images/icon-calculator.svg" alt="calculator-image" class="calculator">  Calculate Repayments
+        </button>
+     </form>
     </section>
     <section class="results">
-      <img src="assets/images/illustration-empty.svg" alt="illustration-empty" class="svg">
-      <div class="text-holder">
-        <h2>  Results shown here
-        </h2>
-        <p>  Complete the form and click “calculate repayments” to see what 
-          your monthly repayments would be.</p>
+      <div class="noResults">
+        <img src="assets/images/illustration-empty.svg" alt="illustration-empty" class="svg">
+        <div class="text-holder">
+          <h2>  Results shown here
+          </h2>
+          <p>  Complete the form and click “calculate repayments” to see what 
+            your monthly repayments would be.</p>
+        </div>
+      </div>
+
+      <div class="showResults">
+        <h1>Your results</h1>
+        <p>  Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again.</p>
+        <div class="results-numbers">
+          <p class="installment">
+            <h4>  Your monthly repayments
+            </h4><br>
+            <span class="monthly"></span>
+          </p>
+          <p class="total">
+            <h4>Total you'll repay over the term</h4><br>
+            <span class="total-amount"></span>
+          </p>
+        </div>
       </div>
     </section>
   </main>
@@ -63,14 +90,12 @@
 
   <!-- Completed results start -->
 
-  <!-- Your results
+  <!-- 
 
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
 
-  Your monthly repayments
 
-  Total you'll repay over the term -->
+
+   -->
 
   <!-- Completed results end -->
   
