@@ -22,15 +22,22 @@
         <div class="input-group">
           <label for="Amount">  Mortgage Amount
           </label>
-          <input type="number" placeholder="£" name="Amount" id="Amount">
+          <input type="number"  name="Amount" id="Amount">
+          <label class="sign" for="Amount">£</label>
         </div>
         <div class="input-group-2">
-          <label for="Term">  Mortgage Term
-          </label>
-          <input type="number" placeholder="years" name="Term" id="Term">
-          <label for="Interest">  Interest Rate
-          </label>
-          <input type="number" placeholder="%" name="Interest" id="Interest">
+          <div class="term-holder">
+            <label for="Term">  Mortgage Term
+            </label>
+            <input type="number"  name="Term" id="Term">
+            <label class="years" for="Term">years</label>
+          </div>
+          <div class="interest-holder">
+            <label for="Interest">  Interest Rate
+            </label>
+            <input type="number" name="Interest" id="Interest">
+            <label class="percent-sign" for="Interest">%</label>
+          </div>
         </div>
         <div class="input-group-3">
           <label for="radio">  Mortgage Type

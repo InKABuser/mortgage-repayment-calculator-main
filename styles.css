@@ -83,6 +83,10 @@ main {
     background-color: var(--White);
     border-radius: 1em;
 }
+form {
+  display: grid;
+  gap: 1.5em;
+}
 .form {
     display: flex;
     gap: 2em;
@@ -104,6 +108,7 @@ button[type = reset] {
     display: flex;
     flex-direction: column;
     align-items: baseline;
+    position: relative;
 }
 .input-group-2 {
     display: grid;
@@ -111,6 +116,44 @@ button[type = reset] {
     grid-template-rows: repeat(2, auto);
     column-gap: 2em;
     align-items: baseline;
+}
+.term-holder {
+  position: relative;
+}
+.interest-holder {
+  position: relative;
+}
+.percent-sign {
+  position: absolute;
+  top: 1.49em;
+  bottom: .01em;
+  right: 0;
+  background-color: var(--Slate-100);
+  width: fit-content;
+  text-align: center;
+  font-size: 1em;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid black;
+  border-inline-start: none;
+  padding-inline: .5em;
+  padding-block-start: .3em;
+}
+.years {
+  position: absolute;
+  top: 1.49em;
+  bottom: .01em;
+  right: 0;
+  background-color: var(--Slate-100);
+  width: fit-content;
+  text-align: center;
+  font-size: 1em;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid black;
+  border-inline-start: none;
+  padding-inline: .5em;
+  padding-block-start: .3em;
 }
 @media (max-width: 930px) {
   .input-group-2{
@@ -124,6 +167,13 @@ button[type = reset] {
     border-radius: 0.3em;
     border: 1px solid black;
     position: relative;
+    width: 100%;
+}
+#Term:focus +.years {
+  border: 2px solid  var(--Slate-900);
+  border-inline-start: none;
+  padding: 0.4em;
+  padding-block-end: .357em;
 }
 #Amount {
   position: relative;
@@ -131,54 +181,47 @@ button[type = reset] {
   height: 2.5em;
   border-radius: 0.3em;
   border: 1px solid black;
+  padding-inline-start: 2.5em;
+} 
+#Amount:focus +.sign {
+  border: 2px solid  var(--Slate-900);
+  border-inline-end: none;
+  padding: 0.4em;
+  padding-block-end: .357em;
+
+}
+.sign {
+  position: absolute;
+  top: 1.49em;
+  left: 0;
+  background-color: var(--Slate-100);
+  width: 2em;
+  /* height: 2em; */
+  text-align: center;
+  aspect-ratio: 1;
+  padding: .5em;
+  border: 1px solid black;
+  border-inline-end: none;
+  padding-block-end: .4em;
 }
 #Interest{
   height: 2.5em;
   position: relative;
   border-radius: 0.3em;
   border: 1px solid black;
+  width: 100%;
 }
-/*  */
-#Amount::placeholder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  background-color: var(--Slate-100);
-  width: 1em;
-  padding: .4em;
-  align-self: center;
-  font-size: 1.2em;
-  color: var(--Slate-900);
-  text-align: center;
+#Interest:focus +.percent-sign {
+  border: 2px solid  var(--Slate-900);
+  border-inline-start: none;
+  padding: 0.4em;
+  padding-block-end: .357em;
 }
-#Term::placeholder{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0.3em;
-  background-color: var(--Slate-100);
-  font-size: 1.1em;
-  font-variation-settings: 'wght' 700;
-  color: var(--Slate-700);
-  text-align: center;
-  width: fit-content;
+/* error class */
+.error {
+  border: 1px solid var(--Red);
 }
-#Interest::placeholder{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0.3em;
-  font-variation-settings: 'wght' 700;
-  background-color: var(--Slate-100);
-  font-size: 1.2em;
-  color: var(--Slate-700);
-  text-align: right;
-  width: fit-content;
-}
-/*  */
+/* end error */
 .input-group-3 {
     display: flex;
     flex-direction: column;
@@ -194,8 +237,14 @@ button[type = reset] {
   gap: 1em;
   font-variation-settings: 'wght' 700;
 }
-input[type = radio] {
+.option:hover {
+  border-color: var(--Lime);
+  background-color: hsla(61, 70%, 52%, 0.2);
+}
 
+input[type = radio]:checked + .option{
+  border-color: var(--Lime);
+  background-color: hsla(61, 70%, 52%, 0.2);
 }
 button[type=submit] {
   width: fit-content;
@@ -207,6 +256,11 @@ button[type=submit] {
   border-radius: 1.5em;
   gap: .7em;
   font-variation-settings: 'wght' 700;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .results {
@@ -226,10 +280,10 @@ button[type=submit] {
   font-variation-settings: 'wght' 200;
 }
 .noResults {
-  display: none;
+  display: grid;
 }
 .showResults {
-  display: grid;
+  display: none;
 }
 @media (max-width: 615px) {
   main {
