@@ -17,6 +17,14 @@ const SHOW_R = document.getElementsByClassName('showResults')[0];
 
 CLEAR.addEventListener('click', () => {
     document.querySelector('form').reset;
+    document.querySelectorAll('input[type = number]').forEach((item) => {
+        item.classList.remove('error');
+    });
+    document.querySelectorAll('label[data-new = "blue-label"]').forEach((label) => {
+        label.classList.remove('error')
+    })
+    NO_R.style.display = "grid";
+    SHOW_R.style.display = "none";
 })
 
 
@@ -35,25 +43,38 @@ SUBMIT.addEventListener('click', (e) => {
         (Math.pow(1 + monthlyInterestRate, termLength) - 1);
         INSTALLMENT.innerHTML = monthlyPay.toFixed(2);
         TOTAL.innerHTML = (monthlyPay * termLength).toFixed(2);
+        document.querySelectorAll('input[type = number]').forEach((item) => {
+            item.classList.remove('error')
+        })
+        document.querySelectorAll('label[data-new = "blue-label"]').forEach((label) => {
+            label.classList.remove('error')
+        })
+        NO_R.style.display = "none";
+        SHOW_R.style.display = "grid";
     } else if (RADIO_2.checked) {
         mortgageType = interestOnly;
         let monthlyPay = mortgageType;
         let totalPay = mortgageType * termLength;
         INSTALLMENT.innerHTML = monthlyPay.toFixed(2);
         TOTAL.innerHTML = totalPay;
+        document.querySelectorAll('input[type = number]').forEach((item) => {
+            item.classList.remove('error');
+        });
+        document.querySelectorAll('label[data-new = "blue-label"]').forEach((label) => {
+            label.classList.remove('error')
+        })
+        NO_R.style.display = "none";
+        SHOW_R.style.display = "grid";
+    } else {
+        document.querySelectorAll('input[type = number]').forEach((item) => {
+            item.classList.add('error');
+        });
+        document.querySelectorAll('label[data-new = "blue-label"]').forEach((label) => {
+            label.classList.add('error')
+        })
+        NO_R.style.display = "grid";
+        SHOW_R.style.display = "none";
     }
-
-    document.querySelectorAll('input').forEach((item) => {
-        if (item.value === "") {
-            item.classList.add('error')
-            NO_R.style.display = "grid";
-            SHOW_R.style.display = "none";
-        } else {
-            item.classList.remove('error')
-            NO_R.style.display = "none";
-            SHOW_R.style.display = "grid";
-        }
-    })
     
 })
 // styling label when radio is checked 

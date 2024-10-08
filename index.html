@@ -23,20 +23,20 @@
           <label for="Amount">  Mortgage Amount
           </label>
           <input type="number"  name="Amount" id="Amount">
-          <label class="sign" for="Amount">£</label>
+          <label data-new="blue-label" class="sign" for="Amount">£</label>
         </div>
         <div class="input-group-2">
           <div class="term-holder">
             <label for="Term">  Mortgage Term
             </label>
             <input type="number"  name="Term" id="Term">
-            <label class="years" for="Term">years</label>
+            <label data-new="blue-label" class="years" for="Term">years</label>
           </div>
           <div class="interest-holder">
             <label for="Interest">  Interest Rate
             </label>
             <input type="number" name="Interest" id="Interest">
-            <label class="percent-sign" for="Interest">%</label>
+            <label data-new="blue-label" class="percent-sign" for="Interest">%</label>
           </div>
         </div>
         <div class="input-group-3">
@@ -67,19 +67,17 @@
       </div>
 
       <div class="showResults">
-        <h1>Your results</h1>
-        <p>  Your results are shown below based on the information you provided. 
-          To adjust the results, edit the form and click “calculate repayments” again.</p>
+        <div class="main-text">
+          <h1>Your results</h1>
+          <p>  Your results are shown below based on the information you provided. 
+            To adjust the results, edit the form and click “calculate repayments” again.</p>
+        </div>
         <div class="results-numbers">
-          <p class="installment">
             <h4>  Your monthly repayments
-            </h4><br>
+            </h4>
             <span class="monthly"></span>
-          </p>
-          <p class="total">
-            <h4>Total you'll repay over the term</h4><br>
+            <h4>Total you'll repay over the term</h4>
             <span class="total-amount"></span>
-          </p>
         </div>
       </div>
     </section>

@@ -219,7 +219,10 @@ button[type = reset] {
 }
 /* error class */
 .error {
-  border: 1px solid var(--Red);
+  border-color: var(--Red) !important;
+}
+.sign .error,.years .error,.percent-sign .error {
+  border-color: var(--Red) ;
 }
 /* end error */
 .input-group-3 {
@@ -279,11 +282,44 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: .8em;
   font-variation-settings: 'wght' 200;
 }
+.main-text {
+  text-align: left;
+
+}
 .noResults {
   display: grid;
+  place-items: center;
 }
 .showResults {
   display: none;
+  text-align: left;
+  justify-items: start;
+  gap: 3em;
+}
+.results-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  background-color: #0E2431;
+  padding: 1.5em;
+  border-radius: .5em;
+  border-block-start: 2px solid var(--Lime);
+
+}
+.monthly {
+  padding-block-end: .2em;
+  border-block-end: 1px solid grey;
+  font-size: 3em;
+  color: var(--Lime);
+}
+.showResults h4 {
+  font-size: .8em;
+  font-variation-settings: 'wght' 200;
+}
+.total-amount {
+  font-variation-settings: 'wght' 800;
+  font-size: 1.4em;
 }
 @media (max-width: 615px) {
   main {
