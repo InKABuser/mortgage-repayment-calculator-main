@@ -221,7 +221,7 @@ button[type = reset] {
 .error {
   border-color: var(--Red) !important;
 }
-.sign .error,.years .error,.percent-sign .error {
+.sign.error,.years.error,.percent-sign.error {
   border-color: var(--Red) ;
   background-color: var(--Red);
   color: var(--White);
